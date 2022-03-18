@@ -6,15 +6,15 @@ public class CashRegister {
 
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
-		System.out.println("What is the price?");
-		double price = kb.nextDouble();
-		System.out.println("What is the amount tendered?");
-		double tendered = kb.nextDouble();
+//		System.out.println("What is the price?");
+//		double price = kb.nextDouble();
+//		System.out.println("What is the amount tendered?");
+//		double tendered = kb.nextDouble();
 
-//		double mod = 6.57 % 3;
-//		System.out.println(mod);
-		String result = makeChange(price, tendered);
-		System.out.println(result);
+		double mod = (Math.round(100*(4.57 % 4)))/100;
+		System.out.println(mod);
+//		String result = makeChange(price, tendered);
+//		System.out.println(result);
 
 		kb.close();
 	}
@@ -33,8 +33,8 @@ public class CashRegister {
 		if (tendered < price) {
 			result = "That is not enough money.";
 		} else if (tendered > price) {
-			double diff = price - tendered;
 			if (tendered > price) {
+				double diff = tendered - price;
 				for (double twenty = 20.00; (diff % twenty) > 0; countTwenty++) {
 					diff -= twenty;
 				}
