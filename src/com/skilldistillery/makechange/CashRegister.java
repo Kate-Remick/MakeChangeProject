@@ -32,11 +32,10 @@ public class CashRegister {
 			double diff = (Math.round((tendered - price) * 100)) / 100.00;
 			System.out.println("The difference comes out to: $" + diff);
 
-			for (double twenty = 20.00; (diff > 0) && ((diff % twenty) >= 0) && (diff >= twenty); countTwenty++) {
+			for (double twenty = 20.00; (diff > 0) && ((diff % twenty) >= 0) && (diff >= twenty); ++countTwenty) {
 				diff -= twenty;
 				diff = (Math.round(diff * 100.00)) / 100.00;
 			}
-			diff = (Math.round(diff * 100.00)) / 100.00;
 			for (double ten = 10.00; (diff > 0) && ((diff % ten) >= 0) && (diff >= ten); ++countTen) {
 				diff -= ten;
 				diff = (Math.round(diff * 100.00)) / 100.00;
@@ -61,7 +60,6 @@ public class CashRegister {
 				diff -= nickle;
 				diff = (Math.round(diff * 100.00)) / 100.00;
 			}
-			diff = (Math.round(diff * 100.00)) / 100.00;
 			for (double penny = 0.01; (diff > 0) && ((diff % penny) >= 0) && (diff >= penny); ++countPenny) {
 				diff = diff - penny;
 				diff = (Math.round(diff * 100.00)) / 100.00;
